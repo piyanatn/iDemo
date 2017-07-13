@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>เพิ่มใหม่</ion-title>
+  <ion-buttons end>
+    <button ion-button icon-left (click)="validate()">
+    <ion-icon name="create"></ion-icon>
+      บันทึก
+    </button>
+  </ion-buttons>    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-item-group>
+  <ion-item-divider color="primary"><b>ข้อมูลติดต่อ</b>
+  </ion-item-divider>
+  <ion-item>
+    <ion-label floating><b>fullname</b></ion-label>
+    <ion-input type="String" [(ngModel)]="fullname"></ion-input>
+  </ion-item>  
+  <ion-item>
+    <ion-label floating><b>mobile</b></ion-label>
+    <ion-input type="String" [(ngModel)]="mobile"></ion-input>
+  </ion-item> 
+</ion-item-group>
+ 
+</ion-content>

@@ -10,13 +10,15 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
+import { AddPage } from '../pages/add/add';
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
+    AddPage,
     TabsPage
   ],
   imports: [
@@ -29,12 +31,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AboutPage,
     ContactPage,
     HomePage,
+    AddPage,    
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
-export class AppModule {}
+export class AppModule { }
