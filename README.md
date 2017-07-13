@@ -1,10 +1,13 @@
 This Demo app for Ionic and sqlite 
-Enter Command line 
+code by Piyanat Nimkhuntod
+www.dev2pro.com
+
+Start project with enter command line 
 ```bash
 $ npm update
 $ ionic cordova platform add android
 $ ionic cordova platform add ios
-$ ionic cordova run ios
+$ ionic cordova serve --lc
 ```
 
 
