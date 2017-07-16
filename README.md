@@ -8,7 +8,7 @@ $ npm update
 $ ionic cordova platform add android
 $ ionic cordova platform add ios
 $ ionic cordova platform add browser
-$ ionic cordova serve --lc
-```
+$ ionic cordova build android 
 
 
+ps. SQLite working fine only resl device not for browser
