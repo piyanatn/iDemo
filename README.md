@@ -12,4 +12,4 @@ $ ionic cordova build android
 $ ionic cordova run android 
 
 
-ps. SQLite working fine only resl device not for browser
+ps. SQLite working fine only real device not for browser
