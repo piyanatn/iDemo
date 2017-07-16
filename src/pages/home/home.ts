@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Modal,NavController ,Platform} from 'ionic-angular';
+import { NavController ,Platform} from 'ionic-angular';
 import { AddPage } from '../add/add';
+import { EditPage } from '../edit/edit';
 import { DatabaseProvider } from '../../providers/database/database';
 
 @Component({
@@ -13,31 +14,42 @@ export class HomePage {
     'Pokémon Yellow',
     'Super Metroid',
  ];
-    itemSelected(item: string) {
-    console.log("Selected Item", item);
-    }
-    add() {
-       this.navCtrl.push(AddPage);
-  }
+
   constructor(
     public navCtrl: NavController,
     private DatabaseProvider: DatabaseProvider,
-    private platform: Platform,    
+    private platform: Platform, 
+    
   ) {
     this.itemLists = [];
      this.platform.ready().then(()=>{
-          //  this.load();
+            this.load();
     })
   }
 
-   // public onPageDidEnter() {
-   //     this.load();
-   // }
- 
+    public itemSelected(itemID: string) {
+    //console.log("Selected Item", itemID);
+        this.navCtrl.push(EditPage, {
+            id: itemID
+        });     
+    }
+    public add() {
+       this.navCtrl.push(AddPage);
+  }
     public load() {
-        alert('Load');
-        this.DatabaseProvider.getCustomer().then((result) => {
-            this.itemLists = <Array<Object>> result;
+        this.DatabaseProvider.getCustomer().then((rows:any) => {
+            
+            this.itemLists = [];
+                if(rows.length > 0) {
+                    for(let i = 0; i < rows.length; i++) {
+                        this.itemLists.push({
+                            id : rows.item(i).id,
+                            fullname: rows.item(i).fullname,
+                            mobile:  rows.item(i).mobile
+                        });
+                        console.log(rows.item(i).fullname);
+                    }
+                }
         }, (error) => {
             console.log("ERROR: ", error);
         });

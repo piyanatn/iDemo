@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { AddPage } from '../pages/add/add';
+import { EditPage } from '../pages/edit/edit';
 import { DatabaseProvider } from '../providers/database/database';
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DatabaseProvider } from '../providers/database/database';
     ContactPage,
     HomePage,
     AddPage,
+    EditPage,
     TabsPage
   ],
   imports: [
@@ -32,7 +34,8 @@ import { DatabaseProvider } from '../providers/database/database';
     AboutPage,
     ContactPage,
     HomePage,
-    AddPage,    
+    AddPage, 
+    EditPage,
     TabsPage
   ],
   providers: [

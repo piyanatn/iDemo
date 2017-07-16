@@ -5,10 +5,10 @@
       <ion-icon name="menu"></ion-icon>
     </button>
  
-  <ion-title>Home</ion-title>
+  <ion-title>เบอร์ติดต่อ</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="add()">
-        <ion-icon name="add-circle"></ion-icon>
+        <ion-icon name="ios-create">เพิ่ม</ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -16,18 +16,14 @@
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to iDemo</h2>
- <ion-item-group>
-<ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
-      {{ item }}
-    </button>
-  </ion-list>
-  </ion-item-group>     
   <ion-item-group>
-<ion-list>
-    <button ion-item *ngFor="let itemList of itemLists" >
-      {{ itemList }}
+    <ion-list>
+    <button ion-item *ngFor="let itemList of itemLists"  (click)="itemSelected(itemList.id)">  
+      <h1>  {{ itemList.fullname }}</h1> 
+      <p> <b>เบอร์</b> {{ itemList.mobile }}</p>           
+      <ion-note item-end>
+       >
+      </ion-note>      
     </button>
   </ion-list>
   </ion-item-group>    
