@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { AddPage } from '../pages/add/add';
+import { DatabaseProvider } from '../providers/database/database';
 @NgModule({
   declarations: [
     MyApp,
@@ -38,7 +39,8 @@ import { AddPage } from '../pages/add/add';
     StatusBar,
     SplashScreen,
     SQLite,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DatabaseProvider
   ]
 })
 export class AppModule { }

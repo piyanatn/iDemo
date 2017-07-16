@@ -7,7 +7,7 @@
  
   <ion-title>Home</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="openModal()">
+      <button ion-button icon-only (click)="add()">
         <ion-icon name="add-circle"></ion-icon>
       </button>
     </ion-buttons>
@@ -17,10 +17,17 @@
 
 <ion-content padding>
   <h2>Welcome to iDemo</h2>
-  <ion-item-group>
+ <ion-item-group>
 <ion-list>
     <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
       {{ item }}
+    </button>
+  </ion-list>
+  </ion-item-group>     
+  <ion-item-group>
+<ion-list>
+    <button ion-item *ngFor="let itemList of itemLists" >
+      {{ itemList }}
     </button>
   </ion-list>
   </ion-item-group>    
