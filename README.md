@@ -5,8 +5,10 @@ www.dev2pro.com
 Start project with enter command line 
 ```bash
 $ npm update
+$ ionic cordova resources
 $ ionic cordova platform add android
 $ ionic cordova platform add ios
+$ ionic cordova platform add browser
 $ ionic cordova serve --lc
 ```
 
